@@ -13,6 +13,27 @@ Loc::loadMessages(__FILE__);
 <!-- /content -->
 <!-- side -->
 <div class="side">
+    <?php
+    if (!$isMain) {
+        $APPLICATION->IncludeComponent(
+            "bitrix:menu", "left", array(
+            "ROOT_MENU_TYPE" => "left",
+            "MENU_CACHE_TYPE" => "A",
+            "MENU_CACHE_TIME" => "36000000",
+            "MENU_CACHE_USE_GROUPS" => "Y",
+            "MENU_CACHE_GET_VARS" => array(),
+            "MAX_LEVEL" => "1",
+            "CHILD_MENU_TYPE" => "left",
+            "USE_EXT" => "Y",
+            "ALLOW_MULTI_SELECT" => "N"
+        ),
+            false,
+            array(
+                "ACTIVE_COMPONENT" => "Y"
+            )
+        );
+    }
+    ?>
     <!-- side anonse -->
     <div class="side-block side-anonse">
         <div class="title-block"><span class="i i-title01"></span>Полезная информация!</div>
@@ -26,9 +47,9 @@ Loc::loadMessages(__FILE__);
         <div class="item-wrap">
             <!-- side action -->
             <div class="side-block side-action">
-                <img src=<?= SITE_TEMPLATE_PATH . "/img/side-action-bg.jpg"?> alt="" class="bg">
+                <img src=<?= SITE_TEMPLATE_PATH . "/img/side-action-bg.jpg" ?> alt="" class="bg">
                 <div class="photo-block">
-                    <img src=<?= SITE_TEMPLATE_PATH ."/img/side-action.jpg"?> alt="">
+                    <img src=<?= SITE_TEMPLATE_PATH . "/img/side-action.jpg" ?> alt="">
                 </div>
                 <div class="text-block">
                     <div class="title">Акция!</div>
@@ -48,13 +69,14 @@ Loc::loadMessages(__FILE__);
                         <div class="inner-block">
                             <div class="title">
                                 <div class="photo-block">
-                                    <img src=<?= SITE_TEMPLATE_PATH ."/img/side-opin.jpg"?> alt="">
+                                    <img src=<?= SITE_TEMPLATE_PATH . "/img/side-opin.jpg" ?> alt="">
                                 </div>
                                 <div class="name-block"><a href="">Дмитрий Иванов</a></div>
                                 <div class="pos-block">Генеральный директор,"Офис+"</div>
                             </div>
                             <div class="text-block">“В магзине предоставили потрясающий выбор
-                                расцветок, а также, получил большую скидку по карте постоянного...</div>
+                                расцветок, а также, получил большую скидку по карте постоянного...
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -63,13 +85,14 @@ Loc::loadMessages(__FILE__);
                         <div class="inner-block">
                             <div class="title">
                                 <div class="photo-block">
-                                    <img src=<?= SITE_TEMPLATE_PATH . "/img/side-opin.jpg"?> alt="">
+                                    <img src=<?= SITE_TEMPLATE_PATH . "/img/side-opin.jpg" ?> alt="">
                                 </div>
                                 <div class="name-block"><a href="">Дмитрий Иванов</a></div>
                                 <div class="pos-block">Генеральный директор,"Офис+"</div>
                             </div>
                             <div class="text-block">“В магазине предоставили потрясающий выбор
-                                расцветок, а также, получил большую скидку по карте постоянного...</div>
+                                расцветок, а также, получил большую скидку по карте постоянного...
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -129,7 +152,7 @@ Loc::loadMessages(__FILE__);
             </div>
         </nav>
         <div class="contacts-block">
-            <div class="title-block"><?= Loc::getMessage('CONTACTS');?></div>
+            <div class="title-block"><?= Loc::getMessage('CONTACTS'); ?></div>
             <div class="loc-block">
                 <div class="address">ул. Летняя, стр.12, офис 512</div>
                 <div class="phone"><a href="tel:84952128506">8 (495) 212-85-06</a>
@@ -137,16 +160,16 @@ Loc::loadMessages(__FILE__);
             </div>
             <div class="main-soc-block">
                 <a href="" class="soc-item">
-                    <img src=<?= SITE_TEMPLATE_PATH . "/img/icons/soc01.png"?> alt="">
+                    <img src=<?= SITE_TEMPLATE_PATH . "/img/icons/soc01.png" ?> alt="">
                 </a>
                 <a href="" class="soc-item">
-                    <img src=<?= SITE_TEMPLATE_PATH . "/img/icons/soc02.png"?> alt="">
+                    <img src=<?= SITE_TEMPLATE_PATH . "/img/icons/soc02.png" ?> alt="">
                 </a>
                 <a href="" class="soc-item">
-                    <img src=<?= SITE_TEMPLATE_PATH . "/img/icons/soc03.png"?> alt="">
+                    <img src=<?= SITE_TEMPLATE_PATH . "/img/icons/soc03.png" ?> alt="">
                 </a>
                 <a href="" class="soc-item">
-                    <img src=<?= SITE_TEMPLATE_PATH . "/img/icons/soc04.png"?> alt="">
+                    <img src=<?= SITE_TEMPLATE_PATH . "/img/icons/soc04.png" ?> alt="">
                 </a>
             </div>
             <div class="copy-block">© 2000 - 2012 "Мебельный магазин"</div>

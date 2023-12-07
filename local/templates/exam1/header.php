@@ -84,7 +84,24 @@ if (CSite::InDir('/index.php'))
             <div class="menu-block popup-wrap">
                 <a href="" class="btn-menu btn-toggle"></a>
                 <div class="menu popup-block">
-                    <ul class="">
+                    <?$APPLICATION->IncludeComponent("bitrix:menu", "top", array(
+                        "ROOT_MENU_TYPE" => "top",
+                        "MAX_LEVEL" => "2",
+                        "CHILD_MENU_TYPE" => "left",
+                        "USE_EXT" => "Y",
+                        "MENU_CACHE_TYPE" => "A",
+                        "MENU_CACHE_TIME" => "36000000",
+                        "MENU_CACHE_USE_GROUPS" => "Y",
+                        "MENU_CACHE_GET_VARS" => ""
+                    ),
+                        false,
+                        array(
+                            "ACTIVE_COMPONENT" => "Y"
+                        )
+                    );?>
+                    <?php
+                    /*
+                     * <ul class="">
                         <li class="main-page"><a href="">Главная</a>
                         </li>
                         <li>
@@ -136,7 +153,8 @@ if (CSite::InDir('/index.php'))
                         <li><a href="">Контакты</a>
                         </li>
                     </ul>
-                    <a href="" class="btn-close"></a>
+                    <a href="" class="btn-close"></a>*/
+                    ?>
                 </div>
                 <div class="menu-overlay"></div>
             </div>
@@ -281,7 +299,6 @@ if (CSite::InDir('/index.php'))
                                     <a href="" class="btn-next">Все новости</a>
                                 </div>
                                 <!-- /main news box -->
-
                             </div>
                         </div>
                         <div class="cnt-section afisha-box">
