@@ -15,4 +15,5 @@ $aMenuLinks = Array(
 		"" 
 	)
 );
+#Generate bitrix orm class
 ?>

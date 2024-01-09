@@ -2,7 +2,9 @@
 
 <?if (!empty($arResult)):?>
 <ul>
-
+    <li class="main-page">
+        <a href="<?= SITE_DIR?>">Главная</a>
+    </li>
 <?
 $previousLevel = 0;
 foreach($arResult as $arItem):?>

@@ -33,7 +33,6 @@ if (CSite::InDir('/index.php'))
 <div class="wrap">
     <div id="panel"><?
         $APPLICATION->ShowPanel(); ?></div>
-    <!-- header -->
     <header class="header">
         <div class="inner-wrap">
             <div class="logo-block">
@@ -86,11 +85,11 @@ if (CSite::InDir('/index.php'))
                 <div class="menu popup-block">
                     <?$APPLICATION->IncludeComponent("bitrix:menu", "top", array(
                         "ROOT_MENU_TYPE" => "top",
-                        "MAX_LEVEL" => "2",
+                        "MAX_LEVEL" => "3",
                         "CHILD_MENU_TYPE" => "left",
                         "USE_EXT" => "Y",
                         "MENU_CACHE_TYPE" => "A",
-                        "MENU_CACHE_TIME" => "36000000",
+                        "MENU_CACHE_TIME" => "36000",
                         "MENU_CACHE_USE_GROUPS" => "Y",
                         "MENU_CACHE_GET_VARS" => ""
                     ),
@@ -169,17 +168,13 @@ if (CSite::InDir('/index.php'))
             </div>
         </div>
     <?php endif;?>
-    <!-- /breadcrumbs -->
-    <!-- page -->
     <div class="page">
-        <!-- content box -->
         <div class="content-box">
-            <!-- content -->
             <div class="content">
                 <div class="cnt">
-                    <?php if($isMain):?>
+                    <?php if(!$isMain):?>
                         <header>
-                            <h1>Заголовок страницы</h1>
+                            <h1><? $APPLICATION->ShowTitle();?></h1>
                         </header>
                     <?php endif;?>
                     <?php if ($isMain): ?>

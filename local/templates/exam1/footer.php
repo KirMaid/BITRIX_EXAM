@@ -17,19 +17,13 @@ Loc::loadMessages(__FILE__);
     if (!$isMain) {
         $APPLICATION->IncludeComponent(
             "bitrix:menu", "left", array(
-            "ROOT_MENU_TYPE" => "left",
-            "MENU_CACHE_TYPE" => "A",
-            "MENU_CACHE_TIME" => "36000000",
-            "MENU_CACHE_USE_GROUPS" => "Y",
-            "MENU_CACHE_GET_VARS" => array(),
-            "MAX_LEVEL" => "1",
-            "CHILD_MENU_TYPE" => "left",
-            "USE_EXT" => "Y",
-            "ALLOW_MULTI_SELECT" => "N"
-        ),
-            false,
-            array(
-                "ACTIVE_COMPONENT" => "Y"
+                "ROOT_MENU_TYPE" => "left",
+                "MAX_LEVEL" => "1",
+                /*"MENU_CACHE_TIME" => "3600",
+                "MENU_CACHE_TYPE" => "A",
+                "MENU_CACHE_USE_GROUPS" => "Y",*/
+                "USE_EXT" => "Y",
+                "COMPONENT_TEMPLATE" => "left"
             )
         );
     }
