@@ -22,11 +22,32 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Услуги",
-		"services/",
-		Array(),
-		Array(),
-		""
-    )
+		"Услуги", 
+		"services/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Партнёры", 
+		"/partners/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Отзывы", 
+		"/reviews/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Поиск", 
+		"/search/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
 );
 ?>

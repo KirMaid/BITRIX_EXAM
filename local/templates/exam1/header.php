@@ -31,8 +31,7 @@ if (CSite::InDir('/index.php'))
 </head>
 <body>
 <div class="wrap">
-    <div id="panel"><?
-        $APPLICATION->ShowPanel(); ?></div>
+    <div id="panel"><? $APPLICATION->ShowPanel(); ?></div>
     <header class="header">
         <div class="inner-wrap">
             <div class="logo-block">
@@ -56,7 +55,7 @@ if (CSite::InDir('/index.php'))
                     "demo",
                     Array(
                         "FORGOT_PASSWORD_URL" => "/login/?forgot_password=yes",
-                        "PROFILE_URL" => "/login/",
+                        "PROFILE_URL" => "/login/user.php",
                         "REGISTER_URL" => "/login/?register=yes",
                         "SHOW_ERRORS" => "N"
                     )
@@ -195,8 +194,6 @@ if (CSite::InDir('/index.php'))
                         </p>
                         <div class="cnt-section index-column">
                             <div class="col-wrap">
-
-                                <!-- main actions box -->
                                 <div class="column main-actions-box">
                                     <div class="title-block">
                                         <h2>Новинки</h2>
