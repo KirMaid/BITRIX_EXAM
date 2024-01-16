@@ -56,10 +56,7 @@ $this->setFrameMode(true);
                         <a href="<?=$arItem["DETAIL_PAGE_URL"]?>">
                             <img
                                     class="preview_picture"
-                                    border="0"
-                                    src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>"
-                                    width="<?=$arItem["PREVIEW_PICTURE"]["WIDTH"]?>"
-                                    height="<?=$arItem["PREVIEW_PICTURE"]["HEIGHT"]?>"
+                                    src="<?=CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"]["ID"],array("height" =>50, "width" => 68),BX_RESIZE_IMAGE_EXACT)['src']?>"
                                     alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>"
                                     title="<?=$arItem["PREVIEW_PICTURE"]["TITLE"]?>"
                                     style="float:left"
@@ -68,10 +65,7 @@ $this->setFrameMode(true);
                     <?else:?>
                         <img
                                 class="preview_picture"
-                                border="0"
-                                src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>"
-                                width="<?=$arItem["PREVIEW_PICTURE"]["WIDTH"]?>"
-                                height="<?=$arItem["PREVIEW_PICTURE"]["HEIGHT"]?>"
+                                src="<?=CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"]["ID"],array("height" =>50, "width" => 68),BX_RESIZE_IMAGE_EXACT)['src']?>"
                                 alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>"
                                 title="<?=$arItem["PREVIEW_PICTURE"]["TITLE"]?>"
                                 style="float:left"
