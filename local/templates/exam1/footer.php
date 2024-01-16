@@ -119,14 +119,22 @@ Loc::loadMessages(__FILE__);
         <nav class="main-menu">
             <div class="item">
                 <div class="title-block">О магазине</div>
-                <ul>
-                    <li><a href="">Отзывы</a>
-                    </li>
-                    <li><a href="">Руководство </a>
-                    </li>
-                    <li><a href="">История</a>
-                    </li>
-                </ul>
+                <?$APPLICATION->IncludeComponent(
+                    "bitrix:menu",
+                    "bottom",
+                    Array(
+                        "ALLOW_MULTI_SELECT" => "N",
+                        "CHILD_MENU_TYPE" => "left",
+                        "DELAY" => "N",
+                        "MAX_LEVEL" => "1",
+                        "MENU_CACHE_GET_VARS" => array(""),
+                        "MENU_CACHE_TIME" => "3600",
+                        "MENU_CACHE_TYPE" => "N",
+                        "MENU_CACHE_USE_GROUPS" => "Y",
+                        "ROOT_MENU_TYPE" => "bottom",
+                        "USE_EXT" => "Y"
+                    )
+                );?>
             </div>
             <div class="item">
                 <div class="title-block">Каталог товаров</div>
