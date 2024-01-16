@@ -66,40 +66,63 @@ Loc::loadMessages(__FILE__);
 
         <!-- footer rew slider box -->
         <div class="item-wrap">
-            <div class="rew-footer-carousel">
-                <div class="item">
-                    <div class="side-block side-opin">
-                        <div class="inner-block">
-                            <div class="title">
-                                <div class="photo-block">
-                                    <img src=<?= SITE_TEMPLATE_PATH . "/img/side-opin.jpg" ?> alt="">
-                                </div>
-                                <div class="name-block"><a href="">Дмитрий Иванов</a></div>
-                                <div class="pos-block">Генеральный директор,"Офис+"</div>
-                            </div>
-                            <div class="text-block">“В магзине предоставили потрясающий выбор
-                                расцветок, а также, получил большую скидку по карте постоянного...
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="side-block side-opin">
-                        <div class="inner-block">
-                            <div class="title">
-                                <div class="photo-block">
-                                    <img src=<?= SITE_TEMPLATE_PATH . "/img/side-opin.jpg" ?> alt="">
-                                </div>
-                                <div class="name-block"><a href="">Дмитрий Иванов</a></div>
-                                <div class="pos-block">Генеральный директор,"Офис+"</div>
-                            </div>
-                            <div class="text-block">“В магазине предоставили потрясающий выбор
-                                расцветок, а также, получил большую скидку по карте постоянного...
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?$APPLICATION->IncludeComponent(
+                "bitrix:news.list",
+                "carousel",
+                Array(
+                    "ACTIVE_DATE_FORMAT" => "d.m.Y",
+                    "ADD_SECTIONS_CHAIN" => "N",
+                    "AJAX_MODE" => "N",
+                    "AJAX_OPTION_ADDITIONAL" => "",
+                    "AJAX_OPTION_HISTORY" => "N",
+                    "AJAX_OPTION_JUMP" => "N",
+                    "AJAX_OPTION_STYLE" => "Y",
+                    "CACHE_FILTER" => "N",
+                    "CACHE_GROUPS" => "Y",
+                    "CACHE_TIME" => "36000000",
+                    "CACHE_TYPE" => "A",
+                    "CHECK_DATES" => "Y",
+                    "DETAIL_URL" => "",
+                    "DISPLAY_BOTTOM_PAGER" => "Y",
+                    "DISPLAY_DATE" => "N",
+                    "DISPLAY_NAME" => "Y",
+                    "DISPLAY_PICTURE" => "Y",
+                    "DISPLAY_PREVIEW_TEXT" => "Y",
+                    "DISPLAY_TOP_PAGER" => "N",
+                    "FIELD_CODE" => array("PREVIEW_TEXT","PREVIEW_PICTURE",""),
+                    "FILTER_NAME" => "",
+                    "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+                    "IBLOCK_ID" => "5",
+                    "IBLOCK_TYPE" => "reviews",
+                    "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                    "INCLUDE_SUBSECTIONS" => "Y",
+                    "MESSAGE_404" => "",
+                    "NEWS_COUNT" => "2",
+                    "PAGER_BASE_LINK_ENABLE" => "N",
+                    "PAGER_DESC_NUMBERING" => "N",
+                    "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                    "PAGER_SHOW_ALL" => "N",
+                    "PAGER_SHOW_ALWAYS" => "N",
+                    "PAGER_TEMPLATE" => ".default",
+                    "PAGER_TITLE" => "Новости",
+                    "PARENT_SECTION" => "",
+                    "PARENT_SECTION_CODE" => "",
+                    "PREVIEW_TRUNCATE_LEN" => "",
+                    "PROPERTY_CODE" => array("POSITION","COMPANY",""),
+                    "SET_BROWSER_TITLE" => "N",
+                    "SET_LAST_MODIFIED" => "N",
+                    "SET_META_DESCRIPTION" => "N",
+                    "SET_META_KEYWORDS" => "N",
+                    "SET_STATUS_404" => "N",
+                    "SET_TITLE" => "N",
+                    "SHOW_404" => "N",
+                    "SORT_BY1" => "ACTIVE_FROM",
+                    "SORT_BY2" => "NAME",
+                    "SORT_ORDER1" => "DESC",
+                    "SORT_ORDER2" => "ASC",
+                    "STRICT_SECTION_CHECK" => "N"
+                )
+            );?>
         </div>
         <!-- / footer rew slider box -->
     </div>
@@ -166,7 +189,14 @@ Loc::loadMessages(__FILE__);
             <div class="title-block"><?= Loc::getMessage('CONTACTS'); ?></div>
             <div class="loc-block">
                 <div class="address">ул. Летняя, стр.12, офис 512</div>
-                <div class="phone"><a href="tel:84952128506">8 (495) 212-85-06</a>
+                <div class="phone">
+                    <?
+                    $APPLICATION->IncludeFile(
+                        SITE_DIR."include/phone.php",
+                        Array(),
+                        Array("MODE"=>"html")
+                    );
+                    ?>
                 </div>
             </div>
             <div class="main-soc-block">
